@@ -1,0 +1,57 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+    
+    <ui:define name="content">
+        <div class="Section">
+            <h:form>
+                <p:remoteCommand autoRun="#{not userBean.loggedIn}" oncomplete="PF('notLoggedInDlgVar').show();"/>
+            </h:form>
+
+            <h:form id="editPasswdForm">
+                <p:messages autoUpdate="true" for="editPasswdMsg" showDetail="true" closable="true" showSummary="false" globalOnly="true" showIcon="false"/>
+
+                <br />
+                <div align="center">
+                    <h:outputText value="Change your password!"/>
+                    <p:messages for="currentPwdId" escape="false" showSummary="false" showDetail="true" autoUpdate="true" showIcon="false"/>
+                    <p:password id="currentPwdId" value="#{editPasswdBean.currentPassword}" placeholder="Current Password" 
+                                required="true" requiredMessage="We need your current password!"/>
+                    <br />
+                    <br />
+                    <p:messages for="newPwdId" escape="false" showSummary="false" showDetail="true" autoUpdate="true" showIcon="false"/>
+                    <p:password id="newPwdId" value="#{editPasswdBean.newPassword}" placeholder="New Password" feedback="true"
+                                required="true" requiredMessage="We need your new password!" match="confirmPwdId" label="Password"/>
+                    <br />
+                    <br />
+                    <p:messages for="confirmPwdId" escape="false" showSummary="false" showDetail="true" autoUpdate="true" showIcon="false"/>
+                    <p:password id="confirmPwdId" value="#{editPasswdBean.confirmPassword}" placeholder="Confirm Password" label="Confirmation Password"
+                                required="true" requiredMessage="We need your confirmation password!"/>
+                </div>
+
+                <br />
+
+                <div align="center">
+                    <h:panelGrid columns="3">
+                        <p:commandButton value="Change Password" actionListener="#{editPasswdBean.saveNewPasswd()}" update="editPasswdForm"/>
+                        <p:commandButton value="Clear" type="button" onclick="clearEditPwdInput();"/>
+                        <p:commandButton value="Cancel" type="button" onclick="window.location.href='#{editPasswdBean.contextPath}/account';"/>
+                    </h:panelGrid>
+                </div>
+            </h:form>
+
+            <h:form>
+                <p:remoteCommand name="clearEditPwdInput" actionListener="#{editPasswdBean.clearAll()}" update="editPasswdForm"/>
+            </h:form>
+
+            <p:dialog closable="false" appendTo="@(body)" styleClass="clearDlgHeaderBgnd" widgetVar="compAcctSuccessVar" modal="true">
+                <h:outputText value="Password Successfully Updated"/>
+                <br />
+                <p:commandButton value="Ok" type="button" onclick="window.location.href='#{editPasswdBean.contextPath}/account'"/>
+            </p:dialog>
+        </div>
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,76 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml">
+    
+    <ui:define name="content">
+        <div class="Section">
+            <h:form>
+                <p:remoteCommand autoRun="#{not userBean.loggedIn}" oncomplete="PF('notLoggedInDlgVar').show();"/>
+            </h:form>
+
+            <h:form id="personnelInfoForm">
+
+                <div align="center">
+                    <h1>Account Settings</h1>
+                    <br />
+
+                    <p:messages autoUpdate="false" closable="false" showDetail="true" showSummary="false" styleClass="msgInvisBkgnd"
+                                showIcon="false"/>
+
+                    <br />
+
+                    <h:panelGrid columns="2">
+                        <h:outputText value="Email"/>
+                        <p:inputText id="acctEmailId" value="#{accountBean.tempUser.emailAddress}" style="width: 97%;"/>
+                        
+                        <h:outputText value="Phone"/>
+                        <p:inputText id="phoneId" value="#{accountBean.tempUser.phoneNumber}"/>
+
+                        <h:outputText value="First Name"/>
+                        <p:inputText id="acctFirstNameId" value="#{accountBean.tempUser.firstName}" required="true" requiredMessage="Please enter your first name!"/>
+
+                        <h:outputText value="Last Name"/>
+                        <p:inputText id="acctLastNameId" value="#{accountBean.tempUser.lastName}" required="true" requiredMessage="Please enter your last name!"/>
+
+                        <h:outputText value="Password"/>
+                        <p:commandLink value="Change Password" onclick="window.location.href='#{accountBean.contextPath}/editPasswd'"/>
+
+                        <h:outputText value="State"/>
+                        <p:selectOneMenu id="regionId" value="#{accountBean.selectedRegionName}" filter="true">
+                            <f:selectItem itemLabel="Select State" itemValue=""/>
+                            <f:selectItems value="#{accountBean.regions}" var="region"
+                                           itemLabel="#{region.description}" itemValue="#{region.description}"/>
+                            <p:ajax listener="#{accountBean.handleRegionChange()}" update="cityId" onstart="PF('updateInfoAccountBui').show();"
+                                     oncomplete="PF('updateInfoAccountBui').hide();"/>
+                        </p:selectOneMenu>
+
+                        <h:outputText value="City"/>
+                        <p:selectOneMenu id="cityId" value="#{accountBean.selectedCityName}" filter="true">
+                            <f:selectItem itemLabel="Select City" itemValue=""/>
+                            <f:selectItems value="#{accountBean.cities}" var="city"
+                                           itemLabel="#{city.description}" itemValue="#{city.description}"/>
+                        </p:selectOneMenu>
+                    </h:panelGrid>
+
+                    <p:commandButton value="Save" actionListener="#{accountBean.saveUserChanges()}" onstart="PF('saveAccountBui').show();"
+                                     oncomplete="updateHeader(); PF('saveAccountBui').hide();" update="@form"/>
+                </div>
+
+                <p:blockUI block="@form" widgetVar="saveAccountBui">
+                    <h:outputText value="Updating Your Profile"/>
+                    <br/>
+                    <p:graphicImage value="resources/default/images/ajax_loader.gif"/>
+                </p:blockUI>
+
+                <p:blockUI block="@form" widgetVar="updateInfoAccountBui">
+                    <h:outputText value="Loading. Please Wait."/>
+                    <br/>
+                    <p:graphicImage value="resources/default/images/ajax_loader.gif"/>
+                </p:blockUI>
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>

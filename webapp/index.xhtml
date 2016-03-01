@@ -1,0 +1,107 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:b="http://bootsfaces.net/ui"
+                template="/WEB-INF/template.xhtml">
+    
+    <ui:define name="head">
+        <style type="text/css">
+            body{background-color:#F1F1F1;}
+        </style>
+    </ui:define>
+    
+    <ui:define name="centerContent">
+        
+        <div class="emptyBr10"/>
+        
+        <div align="center">
+            <p:panel style="width: 75%; height: 100%;" rendered="#{userBean.loggedIn}">
+                <h:form>
+                    <div align="center">
+                        <h:outputText value="Options:" style="font-weight: bold;"/>
+                    </div>
+                    <br />
+                    
+                    <b:commandButton value="Start New Application" look="primary" actionListener="#{loginBean.continueApp}" rendered="#{userBean.form eq null}"/>
+
+                    <b:commandButton value="Continue Application" look="primary" actionListener="#{loginBean.continueApp}" rendered="#{userBean.form ne null and userBean.form.dateCompleted eq null}"/>
+                    
+                    <h:outputText value="Your application is currently under review. Please check back later" style="font-weight: bold;" rendered="#{userBean.form ne null and userBean.form.dateCompleted ne null}"
+                    
+                    <b:commandButton value="Review Applications" look="primary" type="button" onclick="window.location.href='#{userBean.contextPath}/review_apps';" 
+                                     rendered="#{userBean.user.isAdmin}"/>
+                </h:form>
+            </p:panel>
+            
+            <p:panel style="width: 75%; height: 100%;" rendered="#{not userBean.loggedIn}">
+                <h:panelGrid columns="5">
+                    <h:panelGrid>
+                        Welcome to the Electronic School Lunch Application.
+                        <div class="emptyBr10"/>
+                        Helping millions of American students access school meals.                        
+                    </h:panelGrid>
+                    
+                    <p:spacer width="10"/>
+                    
+                    <p:spacer width="2" height="140" style="position: relative; bottom: -5px;background-color: #A8A8A8;"/>
+                    
+                    <p:spacer width="10"/>
+                    
+                    <h:form id="loginUserFormId">
+
+                        <div align="center">
+                            <span style="font-weight: bold; text-align: left;" class="fontSize20">Sign In</span>
+
+                            <br />
+
+                            <p:messages autoUpdate="false"  escape="false" showSummary="false" showDetail="true" globalOnly="true" showIcon="false"/>
+
+                            <br />
+                            
+                            <p:messages for="loginEmailId" escape="false" showSummary="false" showDetail="true" autoUpdate="true" showIcon="false"/>
+                            <p:inputText id="loginEmailId" value="#{loginBean.login}" placeholder="Email or Phone Number" size="30"
+                                         required="true" requiredMessage="Oops, you forgot your email or mobile number!"/>
+
+                            <div class="emptyBr10"/>
+                            <p:messages for="loginPasswordId" escape="false" showSummary="false" showDetail="true" autoUpdate="true" showIcon="false"/>
+                            <p:password id="loginPasswordId"  value="#{loginBean.userPassword}" placeholder="Password" 
+                                        required="true" requiredMessage="Oops, you forgot your password!" size="30"/>
+
+                            <div class="emptyBr10"/>
+                            <div class="emptyBr10"/>
+                            <b:commandButton id="signinCmdBtn" value="Sign In" actionListener="#{loginBean.loginUser()}"
+                                             update="@form" iconAwesome="lock" look="primary"
+                                             onclick="PF('signinWidgetVar').show();" oncomplete="PF('signinWidgetVar').hide();"/>
+
+                            <div class="emptyBr10"/>
+
+                            By clicking Sign In, you agree to our <a href="#" style="color: blue;">License Agreement</a> and 
+                            <a href="#" style="color: blue;">Privacy Statement</a>.
+
+                            <div class="emptyBr10"/>
+                            <span >
+                                <a href="#{loginBean.contextPath}/forgot_password" style="color: blue">Forgot Password?</a>
+                            </span>
+
+                            <div class="emptyBr10"/>
+                            <span >Don't have an account? 
+                                <a href="#{loginBean.contextPath}/register" style="color: blue;"> Sign up now.</a>
+                            </span>
+                            </div>
+
+                        <br />
+                        <p:blockUI block="@form" widgetVar="signinWidgetVar">
+                            <br />
+                            <h:outputText value="Loggin in. Please Wait!"/>
+                            <br />
+                            <p:graphicImage name="default/images/ajax_loader.gif"/>
+                        </p:blockUI>
+                    </h:form>
+                </h:panelGrid>
+            </p:panel>
+        </div>
+    </ui:define>
+
+</ui:composition>

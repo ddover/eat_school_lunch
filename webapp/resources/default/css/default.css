@@ -1,0 +1,742 @@
+/* 
+    Document   : default
+    Created on : Mar 24, 2013, 3:09:31 PM
+    Author     : DoverD
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*make the menu btn for the menubar transparent*/
+.btnMenuBtnNoBckGnd.ui-menubutton {
+    background: transparent;
+    border: transparent;
+}
+
+html, body {height: 100%;}
+
+#footer {
+    position: relative;
+    margin-top: -150px; /* negative value of footer height */
+    height: 150px;
+    clear:both;
+} 
+
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;
+}
+
+
+h1, h2, h3 {
+        margin-top: 0;
+}
+
+h1 {
+        font-size: 1.6em;
+        font-weight: normal;
+}
+
+h2 {
+        font-size: 1.6em;
+}
+
+h3 {
+        font-size: 1em;
+        margin-top:20px;
+}
+
+ul {
+}
+
+a {
+        text-decoration: none;
+}
+
+a:hover {
+        text-decoration: underline;
+}
+
+a img {
+        border: none;
+}
+
+img.left {
+        float: left;
+        margin: 0 20px 0 0;
+}
+
+img.right {
+        float: right;
+        margin: 0 0 0 20px;
+}
+
+/* Header */
+#header {
+    padding: 4px 0px;
+    position: relative;
+}
+
+#logo {
+    text-align: left;
+}
+
+/* Menu */
+#menu {
+    position: absolute;
+    top:20px;
+    right:15px;
+        padding: 0;
+        height: 59px;
+    overflow: hidden;
+}
+
+#menu ul {
+        margin: 0;
+        list-style: none;
+}
+
+#menu li {
+        display: inline;
+}
+
+#menu li a {
+        display: block;
+        float: left;
+        height: 42px;
+        margin: 0;
+        padding: 18px 40px 0 40px;
+        text-decoration: none;
+        font-size: 20px;
+}
+
+#menu li a:hover {
+        text-decoration: underline;
+}
+
+#globalthemeswitcher {
+    position:absolute;
+    bottom:5px;
+    right:50px;
+}
+
+/* Page */
+#page {
+        padding: 10px 0px;
+        background: #FFFFFF;
+}
+
+/* Content */
+#content {
+        width: 70%;
+    float:left;
+}
+
+.post {
+        padding-bottom: 15px;
+}
+
+.post h1 {
+        font-weight: normal;
+}
+
+.title {
+        height: 30px;
+        margin-left: 10px;
+        padding: 8px 0 0 20px;
+}
+
+.title a {
+        border-bottom: none;
+        color: #FFFFFF;
+}
+
+.title a:hover {
+        border-bottom: 1px dotted #000000;
+}
+
+.submenu-title {
+    padding: 4px 10px;
+}
+
+.submenu-content {
+    text-align:center;
+}
+
+.byline {
+        margin: -60px 20px 20px 20px;
+}
+
+.byline a {
+        color: #DC8700;
+}
+
+.tag {
+        padding: 0 15px;
+}
+
+.entry {
+        padding: 0 20px;
+}
+
+.entry p {
+        line-height: 200%;
+}
+
+.links {
+        padding: 4px 0px;
+        text-align: right;
+        font-weight: bold;
+}
+
+.links a {
+        border: none;
+}
+
+.links a:hover {
+}
+
+#sidebar {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+        margin-left: -1px;
+    overflow: hidden;
+}
+
+#sidebar a.ui-state-hover,
+#sidebar a.ui-state-highlight {
+    border:0 none;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+#sidebar table {
+    width: 100%;
+}
+
+#sidebar table td {
+    vertical-align: top;
+}
+
+/*when using the panel align the bottom*/
+.gridAlignBottom td {
+    vertical-align: bottom;
+}
+
+.gridAlignTop td {
+    vertical-align: top;
+}
+
+#sidebar ul {
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar ul li {
+    list-style-type: none;
+    padding: 1px;
+}
+
+/* Footer 
+#footer {
+        height: 70px;
+        margin: 0 auto;
+        padding: 0 20px;
+    font-size: 14px;
+}
+
+#footer p {
+        margin: 0;
+        padding: 25px 0 0 0;
+        text-align: center;
+}
+
+#footer a {
+}
+
+#footer .link {
+        float: right;
+}
+
+#footer .copyright {
+        float: left;
+}*/
+
+.homeText {
+        line-height: 175%;
+}
+
+.homeMenu {
+        width:200px;
+        float:left;
+        margin-right:10px
+}
+
+.themeMenu {
+    overflow: auto;
+    height:300px;
+    width:200px;
+}
+
+.dp-xml {
+    width:1000px;
+}
+
+/*.ui-themeswitcher a.ui-selectonemenu-label-container {
+    text-decoration: none !important;
+}*/
+
+.ui-widget {
+    font-size: 12px !important;
+}
+
+.selectedTagStyle {
+    font-weight: bolder;
+    color: red;
+}
+
+.noPanelBorder.ui-panel-content.ui-widget-content {
+    border: none;
+}
+
+.headLineStyle {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+/*styles for the layout units */
+.viewTempLU {
+    width: 100%;
+    border: hidden;
+    /*background: transparent;*/
+}
+
+/*remove the border*/
+.noBorders {
+    border: hidden;
+}
+
+
+.datalistNoborder .ui-datalist-content.ui-widget-content {
+border: none;
+/*background: transparent;*/
+/*background-image: none;*/
+}
+
+.dataScrollerNoborder .ui-datascroller-content.ui-widget-content {
+border: none;
+/*background: transparent;*/
+/*background-image: none;*/
+}
+
+.contentFlowNoBorder.ui-contentflow.ui-widget.ui-widget-content.ui-corner-all {
+    border: none;
+}
+
+/*.ui-dialog .ui-dialog-titlebar {
+   display: none !important;
+}*/
+
+#nav {
+    float: left;
+    width: 15%;
+}
+
+#section {
+    float: left;
+    width: 70%;
+}
+
+#adSection {
+    float: left;
+    width: 15%;
+}
+
+#quotescontainer{
+    min-height:100%;
+    position:relative;
+}
+#quotesleft {
+    float: left; 
+    width: 18%;
+    /*background-color: #bbb;*/
+}
+
+#quotesBtnLeftCenter {
+    float: left; 
+    width: 2%;
+}
+
+#quotescenter { 
+    float: left;
+    /*background-color: #eee;*/
+    width: 60%;
+}
+
+#quotesBtnCenterRight {
+    float: left; 
+    width: 2%;
+}
+
+#quotesright{
+    float: left;
+    width: 18%;
+    /*background-color: #bbb;*/
+}
+
+#indexLeft {
+    float: left;
+    width: 33%;
+}
+
+#indexCenter {
+    float: left;
+    width: 33%;
+}
+
+#indexRight {
+    float: left;
+    width: 33%;
+}
+
+/*#quotesfooter {
+    width: 100%;
+    height: 100%;
+}*/
+
+.galleriaNoBorder.ui-galleria.ui-widget.ui-widget-content {
+    border: none;
+}
+
+#crawlerBtm {
+	width:100%;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+
+.layoutUnitNoBorder.ui-layout-pane {
+    border: none;
+} 
+
+.footer {
+	width:100%;
+	/*height:80px;*/
+	position: static;
+/*	bottom:0;
+	left:0;*/
+	/*background:#ee5;*/
+}
+
+.greyedOut {
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
+
+.tabViewNoBG.ui-tabs .ui-tabs-nav {
+    background-color: inherit;
+}
+
+.tagCloudNoBorder.ui-tagcloud ui-widget ui-widget-content ui-corner-all {
+    border: none;
+}
+
+.image-grey {
+    display:block;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+
+.imgBckgrd {
+    position: relative; 
+    width: 100%; /* for IE 6 */
+}
+
+h1 { 
+   position: absolute; 
+   color: black;
+   top: 0; 
+   width: 100%; 
+}
+
+.clearDlgHeaderBgnd .ui-dialog-titlebar {
+    background-color: transparent;
+}
+
+/*to make the tab menu header invisible*/
+.invisTabNav .ui-tabs-nav {
+    background: transparent;
+    /*border-bottom: #DFE1E3 thin solid;*/ 
+}
+
+.invisTabNav.ui-tabs {
+    border: none;
+    height: 100%;
+}
+
+.invisTabNav .ui-state-default.ui-tabs-selected.ui-state-active.ui-corner-top {
+    background-color: #DFE1E3;
+}
+
+.invisTabNav .ui-state-default.ui-corner-top {
+    background-color: #fff;
+}
+
+.invisTabNav .ui-tabs-panels {
+    background-color: #DFE1E3;
+}
+
+.ui-layout-north {
+    z-index: 20 !important;
+    overflow: visible !important;
+}
+
+.ui-layout-north .ui-layout-unit-content {
+    overflow: visible !important;
+    /*background-color: #00aafd;*/
+}
+
+.levelTitle {
+    padding: 4px 6px 4px 6px;
+    margin-right: 3px;
+}
+
+.fieldsetTransparent .ui-fieldset-legend {
+    border: none;
+    background-color: blue;
+}
+
+.pickListBtns .ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-icon-only.ui-picklist-button-add-all,
+              .ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-icon-only.ui-picklist-button-remove-all {
+    visibility: hidden;
+}
+
+/*for the approved date event*/
+.approved.fc-event {
+    background-color: green;
+    border-color: green;
+}
+
+/*for the pending date event*/
+.pending.fc-event {
+    background-color: orange;
+    border-color: orange;
+}
+
+/*for the declined date event*/
+.declined.fc-event {
+    background-color: red;
+    border-color: red;
+}
+
+.input-color {
+    position: relative;
+}
+.input-color input {
+    padding-left: 5px;
+}
+
+/*used for the box of the legend*/
+.color-box {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: #ccc;
+}
+
+.blkDateLgnd {
+    height: 10px;
+    width: 10px;
+    display: inline-block;
+    background-color: #ccc;
+}
+
+/*for the blocked date event*/
+.blkDateEvt.fc-event {
+    background-color: #ccc;
+}
+
+.pgAlignTop td {
+    vertical-align: top;
+}
+
+.pgAlignBottom td {
+    vertical-align: bottom;
+}
+
+.headerStyle.ui-menu {
+    background: #fbf45c;
+    border: none;
+}
+
+/*make command button background transparent*/
+.btnNoBckgrnd.ui-button {
+    background: transparent;
+    border: none;
+}
+
+/*make the background of the command button in the menu bar transparent*/
+.btnThemeBckgnd .ui-button {
+    background: #fbf45c;
+}
+
+.ui-menu.ui-menu-dynamic {
+    background: white;
+}
+
+.ui-menubutton .ui-button {
+    background: transparent;
+    border: none;
+}
+
+/*the menu piece when hovering of the menu bar in the header*/
+.dynamicMenuBckGnd.ui-menu.ui-menu-dynamic {
+    background: white;
+}
+
+/*//makes the messages background invisible
+.ui-messages-info.ui-corner-all,  .ui-messages-error.ui-corner-all  {
+    background: transparent;
+    border: none;
+}
+
+//make the icon invisible
+.ui-messages-info-icon, .ui-messages-error-icon {
+    visibility: hidden;
+}*/
+
+/*rounded corners on datatable*/
+.ui-datatable.ui_corner_all table {
+    border-collapse: separate;
+    border-collapse: collapse; /* Fallback for IE <=7. */
+    border-spacing: 0; 
+}
+.ui-datatable.ui_corner_all table tr:first-child th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+}
+.ui-datatable.ui_corner_all table tr:first-child th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+.ui-datatable.ui_corner_all table tr:first-child th:only-child{
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+.ui-datatable.ui_corner_all table tbody td {
+    border-top: 0;
+    border-top: inherit; /* Fallback for IE <=7. */
+}
+.ui-datatable.ui_corner_all table tr:last-child td:first-child {
+    -moz-border-radius: 0 0 0 6px; 
+    -webkit-border-radius: 0 0 0 6px; 
+    border-radius: 0 0 0 6px;
+}
+.ui-datatable.ui_corner_all table tr:last-child td:last-child {
+    -moz-border-radius: 0 0 6px 0; 
+    -webkit-border-radius: 0 0 6px 0; 
+    border-radius: 0 0 6px 0;
+}
+.ui-datatable.ui_corner_all table tr:last-child td:only-child{
+    -moz-border-radius: 0 0 6px 6px; 
+    -webkit-border-radius: 0 0 6px 6px; 
+    border-radius: 0 0 6px 6px;
+}
+
+.row {
+    position: relative;
+}
+
+#footer {
+    width:100%;
+    height:100px;
+    position: relative;
+    bottom:0;
+    left:0;
+}
+
+/* Font Sizes */
+.fontSize9{font-size:9px !important;} 
+.fontSize10{font-size:10px !important;} 
+.fontSize11{font-size:11px !important;} 
+.fontSize12{font-size:12px !important;} 
+.fontSize13{font-size:13px !important;} 
+.fontSize14{font-size:14px !important;} 
+.fontSize15{font-size:15px !important;} 
+.fontSize16{font-size:16px !important;} 
+.fontSize17{font-size:17px !important;} 
+.fontSize18{font-size:18px !important;} 
+.fontSize19{font-size:19px !important;} 
+.fontSize20{font-size:20px !important;} 
+.fontSize21{font-size:21px !important;} 
+.fontSize22{font-size:22px !important;} 
+.fontSize23{font-size:23px !important;} 
+.fontSize24{font-size:24px !important;} 
+.fontSize25{font-size:25px !important;} 
+.fontSize26{font-size:26px !important;} 
+.fontSize27{font-size:27px !important;} 
+.fontSize28{font-size:28px !important;} 
+.fontSize29{font-size:29px !important;} 
+.fontSize30{font-size:30px !important;}
+.fontSize40{font-size:40px !important;}
+.fontSize50{font-size:50px !important;}
+.fontSize60{font-size:60px !important;}
+.fontSize100{font-size:100px !important;}
+.fontSize130{font-size:130px !important;}
+
+/* Empty breaks */
+.emptyBr1{ display:block; width:100%; height:1px; overflow:hidden;}
+.emptyBr5{ display:block; width:100%; height:5px; overflow:hidden;}
+.emptyBr10{ display:block; width:100%; height:10px; overflow:hidden;}
+.emptyBr20{ display:block; width:100%; height:20px; overflow:hidden;}
+.emptyBr30{ display:block; width:100%; height:30px; overflow:hidden;}
+.emptyBr40{ display:block; width:100%; height:40px; overflow:hidden;}
+.emptyBr50{ display:block; width:100%; height:50px; overflow:hidden;}
+.emptyBr60{ display:block; width:100%; height:60px; overflow:hidden;}
+.emptyBr70{ display:block; width:100%; height:70px; overflow:hidden;}
+.emptyBr80{ display:block; width:100%; height:80px; overflow:hidden;}
+.emptyBr90{ display:block; width:100%; height:90px; overflow:hidden;}
+.emptyBr100{ display:block; width:100%; height:100px; overflow:hidden;}
+.emptyBr110{ display:block; width:100%; height:100px; overflow:hidden;}
+.emptyBr120{ display:block; width:100%; height:100px; overflow:hidden;}
+.emptyBr130{ display:block; width:100%; height:100px; overflow:hidden;}
+.emptyBr140{ display:block; width:100%; height:100px; overflow:hidden;}
+.emptyBr150{ display: block; width: 100%; height:150px; overflow:hidden;}
+
+div.col-md-5 {
+    float: none;
+}
+
+.cmdBtnBlue {
+    background-color: #0071bc;
+    color: white;
+}
+
+.whiteText span.ui-button-text.ui-c {
+    color: white;
+    text-shadow: none;
+}
+
+.whiteIcon .ui-icon {
+    background-image: url("/school_lunch/javax.faces.resource/images/ui-icons_ffffff_256x240.png.xhtml?ln=primefaces-bootstrap");    
+}
+
+.primaryPFBtn {
+    color: #fff; 
+    border-color: #2e6da4; 
+    background: #337ab7; 
+    text-shadow: none;
+    border: 1px solid transparent; 
+    padding: 3px; 
+    font-size: 1em; 
+    white-space: nowrap; 
+    border-radius: 4px;
+}
